@@ -2,12 +2,15 @@ import { useState } from "react";
 import "./App.css";
 import Footer from "./Footer";
 import List from "./List";
-
+import { FaSave } from "react-icons/fa";
 export default function App() {
   const [items, setitems] = useState([]);
 
   function handlelist(items) {
     setitems((item) => [...item, items]);
+  }
+  function ClearAll() {
+    return setitems([]);
   }
   function handleDeleteItem(id) {
     setitems((items) => items.filter((item) => item.id !== id));
@@ -22,7 +25,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <Form handlelist={handlelist} />
+      <Form handlelist={handlelist} ClearAll={ClearAll} />
       <List
         item={items}
         handleDeleteItem={handleDeleteItem}
@@ -35,12 +38,12 @@ export default function App() {
 function Header() {
   return <div className="header"> 🏝️FAR AWAY 🧳</div>;
 }
-function Form({ handlelist }) {
+function Form({ handlelist, ClearAll }) {
   const [value, setvalue] = useState(1);
   const [discription, setdiscription] = useState("");
   function handleForm(e) {
-    if (!discription) return;
     e.preventDefault();
+    if (!discription) return;
     const total = { value, discription, picked: false, id: Date.now() };
     setdiscription("");
     setvalue(1);
@@ -66,6 +69,9 @@ function Form({ handlelist }) {
       />
       <button className="btn" onClick={handleButton}>
         add
+      </button>
+      <button onClick={ClearAll} className="btn">
+        Clear All
       </button>
     </form>
   );

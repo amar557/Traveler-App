@@ -50,8 +50,7 @@ select {
   padding: 5px;
 }
 .btn {
-  height: 3rem;
-  width: 7.5rem;
+  padding: 1rem 2rem;
   background-color: aqua;
   color: black;
   border: 0;
@@ -66,7 +65,6 @@ select {
   display: flex;
   justify-content: flex-start;
   padding-top: 3rem;
-
   gap: 3rem;
   align-items: flex-start;
   flex-wrap: wrap;
