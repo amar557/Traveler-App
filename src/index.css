@@ -17,22 +17,27 @@ html {
   font-size: 10px;
 }
 .header {
-  background-color: orange;
-  font-size: 6rem;
+  background-color: #442cff99;
+  font-size: 4.5rem;
+  letter-spacing: 4px;
   text-align: center;
   padding: 10px;
   font-family: monoton;
 }
+.aeroplane {
+  transform: rotate(50deg);
+}
 .form {
   display: flex;
-  background-color: orangered;
+  background-color: #4989ab;
   align-items: center;
   justify-content: center;
   height: 6rem;
 }
 .form__heading {
   font-size: 1.7rem;
-  color: #00000078;
+  color: rgba(255, 255, 255, 0.596);
+  text-transform: capitalize;
   margin-right: 2rem;
 }
 .form input {
@@ -41,6 +46,7 @@ html {
   border-radius: 50px;
   margin: 2rem;
   font-size: 1.7rem;
+  background-color: #ffffffb3;
 }
 .form input:focus {
   outline: 0;
@@ -51,11 +57,13 @@ select {
   border-radius: 50px;
   height: 25px;
   padding: 5px;
+  outline: 0;
+  background-color: #ffffffb3;
 }
 .btn {
   padding: 1rem 2rem;
-  background-color: aqua;
-  color: black;
+  background-color: #9186eb99;
+  color: rgba(255, 255, 255, 0.815);
   border: 0;
   font-size: 1.7rem;
   margin: 0 2rem;
@@ -63,8 +71,16 @@ select {
   text-transform: uppercase;
 }
 .list {
-  background-color: rgba(255, 166, 0, 0.555);
-  height: 64vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.596),
+      rgba(78, 67, 67, 0.445)
+    ),
+    url("./bg-imge.jpg");
+
+  min-height: 64vh;
+  background-position: center;
+  background-size: cover;
   display: flex;
   justify-content: flex-start;
   padding-top: 3rem;
@@ -77,11 +93,12 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 16%;
+  width: 15%;
   margin: 0 5rem;
+  color: #ffffffdb;
 }
 .button {
-  background-color: #e5771f;
+  background-color: rgba(255, 255, 255, 0.616);
   font-size: 1.7rem;
   border: 0;
   height: fit-content;
@@ -97,7 +114,7 @@ select {
 input[type="checkbox"] {
   height: 2rem;
   width: 2rem;
-  accent-color: #e5771f;
+  accent-color: #4989ab;
 }
 .lineThrough {
   text-decoration: line-through;
@@ -109,7 +126,7 @@ input[type="checkbox"] {
   /* width: 12rem; */
 }
 .footer {
-  background-color: aqua;
+  background-color: #4989ab;
   height: 4rem;
   display: flex;
   align-items: center;

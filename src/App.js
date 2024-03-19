@@ -36,7 +36,12 @@ export default function App() {
   );
 }
 function Header() {
-  return <div className="header"> 🏝️FAR AWAY 🧳</div>;
+  return (
+    <div className="header">
+      {" "}
+      Effortless Exploration <span className="aeroplane">✈</span>{" "}
+    </div>
+  );
 }
 function Form({ handlelist, ClearAll }) {
   const [value, setvalue] = useState(1);

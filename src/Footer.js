@@ -14,7 +14,7 @@ export default function Footer({ items }) {
       ) : (
         <div className="footer">
           you have {totalItems} items on your list and you have packed {packed}
-          items ({percentage})
+          items ({percentage}%)
         </div>
       )}
     </>
