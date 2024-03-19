@@ -71,6 +71,7 @@ select {
   gap: 3rem;
   align-items: flex-start;
   flex-wrap: wrap;
+  place-content: baseline;
 }
 .item {
   display: flex;
