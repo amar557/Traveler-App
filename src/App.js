@@ -1,14 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Footer from "./Footer";
 import List from "./List";
-import { FaSave } from "react-icons/fa";
 export default function App() {
   const [items, setitems] = useState([]);
 
   function handlelist(items) {
     setitems((item) => [...item, items]);
   }
+  useEffect(() => {
+    if (items.length > 0) {
+      localStorage.setItem("storedItems", JSON.stringify(items));
+    }
+  }, [items]);
+  useEffect(() => {
+    const storedItems = localStorage.getItem("storedItems");
+    if (storedItems) {
+      setitems(JSON.parse(storedItems));
+    }
+  }, []);
+
   function ClearAll() {
     return setitems([]);
   }
@@ -38,7 +49,6 @@ export default function App() {
 function Header() {
   return (
     <div className="header">
-      {" "}
       Effortless Exploration <span className="aeroplane">✈</span>{" "}
     </div>
   );

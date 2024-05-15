@@ -1,5 +1,6 @@
 import { RxCross2 } from "react-icons/rx";
 export default function List({ item, handleDeleteItem, handleCheck }) {
+  console.log(item);
   return (
     <div className="list">
       {item.map((item) => (
@@ -18,9 +19,10 @@ function ListItem({ item, handleDeleteItem, handleCheck }) {
     <div className="item">
       <input
         type="checkbox"
-        value={item.picked}
+        checked={item.picked}
         onChange={() => handleCheck(item.id)}
       />
+
       <div className={`listItem ${item.picked ? "lineThrough" : ""}`}>
         {item.value} {item.discription}
       </div>
