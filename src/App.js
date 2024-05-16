@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import List from "./List";
 export default function App() {
   const [items, setitems] = useState([]);
-
+  console.log(items);
   function handlelist(items) {
     setitems((item) => [...item, items]);
   }
