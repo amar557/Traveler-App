@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import List from "./List";
 export default function App() {
   const [items, setitems] = useState([]);
+
   function handlelist(items) {
     setitems((item) => [...item, items]);
   }
@@ -14,21 +15,22 @@ export default function App() {
   }, [items]);
   useEffect(() => {
     const storedItems = localStorage.getItem("storedItems");
-    let real = JSON.parse(storedItems);
-    if (real) {
-      if (real.length <= 1) {
-        setitems([]);
-      } else {
-        setitems(real);
-      }
+    if (storedItems) {
+      setitems(JSON.parse(storedItems));
     }
   }, []);
 
   function ClearAll() {
-    return setitems([]);
+    localStorage.removeItem("storedItems");
+    setitems([]);
   }
   function handleDeleteItem(id) {
-    setitems((items) => items.filter((item) => item.id !== id));
+    if (items.length === 1) {
+      localStorage.removeItem("storedItems");
+      setitems([]);
+    } else {
+      setitems((items) => items.filter((item) => item.id !== id));
+    }
   }
   function handleCheck(id) {
     setitems((items) =>
