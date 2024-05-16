@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import List from "./List";
 export default function App() {
   const [items, setitems] = useState([]);
-  console.log(items);
   function handlelist(items) {
     setitems((item) => [...item, items]);
   }
@@ -15,8 +14,13 @@ export default function App() {
   }, [items]);
   useEffect(() => {
     const storedItems = localStorage.getItem("storedItems");
-    if (storedItems) {
-      setitems(JSON.parse(storedItems));
+    let real = JSON.parse(storedItems);
+    if (real) {
+      if (real.length <= 1) {
+        setitems([]);
+      } else {
+        setitems(real);
+      }
     }
   }, []);
 
