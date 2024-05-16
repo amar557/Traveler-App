@@ -75,22 +75,27 @@ function Form({ handlelist, ClearAll }) {
   return (
     <form className="form" onSubmit={handleForm}>
       <h3 className="form__heading">what do you need for your trip</h3>
-      <select value={value} onChange={(e) => setvalue(Number(e.target.value))}>
-        {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
-          <option value={num} key={num}>
-            {num}
-          </option>
-        ))}
-      </select>
-      <input
-        type="text"
-        placeholder="menu"
-        value={discription}
-        onChange={(e) => setdiscription(e.target.value)}
-      />
-      <button className="btn" onClick={handleButton}>
-        add
-      </button>
+      <div className="inputs">
+        <select
+          value={value}
+          onChange={(e) => setvalue(Number(e.target.value))}
+        >
+          {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+            <option value={num} key={num}>
+              {num}
+            </option>
+          ))}
+        </select>
+        <input
+          type="text"
+          placeholder="menu"
+          value={discription}
+          onChange={(e) => setdiscription(e.target.value)}
+        />
+        <button className="btn" onClick={handleButton}>
+          add
+        </button>
+      </div>
       <button onClick={ClearAll} className="btn">
         Clear All
       </button>
