@@ -102,7 +102,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 15%;
+  min-width: 15%;
   margin: 0 5rem;
   color: #ffffffdb;
 }
@@ -132,6 +132,7 @@ input[type="checkbox"] {
   font-size: 2rem;
   font-weight: 500;
   word-spacing: 0.5rem;
+  padding: 0 10px;
   /* width: 12rem; */
 }
 .footer {

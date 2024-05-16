@@ -1,6 +1,6 @@
 import { RxCross2 } from "react-icons/rx";
 export default function List({ item, handleDeleteItem, handleCheck }) {
-  console.log(item);
+  // console.log(item);
   return (
     <div className="list">
       {item.map((item) => (
